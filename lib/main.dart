@@ -1,6 +1,8 @@
 // import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'package:flutter/services.dart';
+
 class Player {
   String name;
   String? team; // not necessary
@@ -8,8 +10,9 @@ class Player {
 }
 
 void main() {
-  var ryu = Player(name: "underground"); // named parameter
-  // ryu.name // underground
+  SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(statusBarColor: Colors.yellow));
+
   runApp(App());
 }
 
@@ -18,12 +21,40 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          appBar: AppBar(
-            title: Text("Helloflutter"),
-            centerTitle: false,
-            elevation: 22,
-          ),
-          body: Center(child: Text("Hello world!"))),
+          backgroundColor: Color(0xFF181818), // Or use RGBO
+          body: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(
+                          'Hey Selena',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 28,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                        Text(
+                          'Welcome back',
+                          style: TextStyle(
+                              color: Colors.white.withAlpha(200), fontSize: 18),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          )),
     );
   }
 }
