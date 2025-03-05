@@ -17,25 +17,64 @@ class _HomeScreenState extends State<HomeScreen> {
           Flexible(
             flex: 1,
             child: Container(
-              decoration: BoxDecoration(
-                color: Colors.red,
+              alignment: Alignment.bottomCenter,
+              child: Text(
+                "25:00",
+                style: TextStyle(
+                    color: Theme.of(context).cardColor,
+                    fontSize: 80,
+                    fontWeight: FontWeight.w600),
               ),
             ),
           ),
           Flexible(
             flex: 2,
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.green,
-              ),
+            child: Center(
+              child: IconButton(
+                  iconSize: 132,
+                  color: Theme.of(context).cardColor,
+                  onPressed: () {},
+                  icon: Icon(Icons.play_circle_outline)),
             ),
           ),
           Flexible(
             flex: 1,
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Container(
+                    decoration:
+                        BoxDecoration(color: Theme.of(context).cardColor),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Pomodoros",
+                          style: TextStyle(
+                            fontSize: 26,
+                            fontWeight: FontWeight.w600,
+                            color: Theme.of(context)
+                                .textTheme
+                                .headlineLarge!
+                                .color,
+                          ),
+                        ),
+                        Text(
+                          "0",
+                          style: TextStyle(
+                            fontSize: 54,
+                            fontWeight: FontWeight.w600,
+                            color: Theme.of(context)
+                                .textTheme
+                                .headlineLarge!
+                                .color,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         ],
